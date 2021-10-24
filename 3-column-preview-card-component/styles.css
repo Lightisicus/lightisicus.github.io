@@ -1,0 +1,143 @@
+:root {
+--bright-orange: 31, 77%, 52%;
+--dark-cyan: 184, 100%, 22%;
+--very-dark-cyan: 179, 100%, 13%;
+--transparent-white: 0, 0%, 100%, 0.75;
+--very-light-gray : 0, 0%, 95%;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body, button {
+    font-family: 'Lexend Deca', sans-serif;
+}
+
+p, button {
+    font-size: 0.9375rem;
+}
+
+h1 {
+    font-family: 'Big Shoulders Display', sans-serif;
+    color: hsl(var(--very-light-gray));
+    margin-top: 1.7rem;
+}
+
+p {
+    color: hsl(var(--transparent-white));
+    line-height: 1.7em;
+    margin-top: 1.7rem;
+}
+
+.button {
+    background: hsl(var(--very-light-gray));
+    border: none;
+    border-radius: 100vh;
+    width: 60%;
+    min-width: 7.8125rem;
+    height: 10%;
+    cursor: pointer;
+    transition: transform 300ms;
+}
+
+.button:hover,
+.button:focus {
+    transform: scale(1.1);
+    outline: none;
+}
+
+.button--orange {
+    color: hsl(var(--bright-orange));
+}
+
+.button--cyan {
+    color: hsl(var(--dark-cyan));
+}
+
+.button--dark-cyan {
+    color: hsl(var(--very-dark-cyan));
+}
+
+.container {
+    display: flex;
+    width: 60%;
+    min-height: 31.25rem;
+    margin: 5em auto;
+}
+
+.vehicle {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 2.5em;
+}
+
+.vehicle--orange {
+    background: hsl(var(--bright-orange));
+}
+
+.vehicle--cyan {
+    background: hsl(var(--dark-cyan));
+}
+
+.vehicle--dark-cyan {
+    background: hsl(var(--very-dark-cyan)); 
+}
+
+.main-text {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    min-height: 50%;
+}
+
+.attribution { 
+    font-size: 11px; 
+    text-align: center; 
+}
+
+.attribution a { 
+    color: hsl(228, 45%, 44%); 
+}
+
+.attribution a:hover,
+.attribution a:focus { 
+    color: hsl(228, 45%, 60%);
+    outline: none; 
+}
+
+/* Media Queries */
+
+@media (max-width: 1024px) {  /* Laptop */
+    .container {
+        width: 80%;
+    }
+}
+
+ @media (max-width: 768px) {  /* Tablet */
+    .button {
+        width: 40%;
+        height: 15%;
+    }
+    
+    .container {
+        flex-direction: column;
+    }
+
+    .vehicle {
+        height: 25rem;
+    }
+} 
+
+@media (max-width: 480px) {  /* Phone */
+    .button {
+        width: 60%;
+    }
+
+    .vehicle {
+        height: 26.25rem;
+    }
+}
