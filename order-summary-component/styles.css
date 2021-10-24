@@ -1,0 +1,143 @@
+:root {
+    --pale-blue: 225, 100%, 94%;
+    --bright-blue: 245, 75%, 52%;
+    --very-pale-blue: 225, 100%, 98%;
+    --desaturated-blue: 224, 23%, 55%;
+    --dark-blue: 223, 47%, 23%;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background: hsl(var(--pale-blue)) url(./img/pattern-background-desktop.svg) top/100% 50% no-repeat;
+    color: hsl(var(--desaturated-blue));
+    font-family: 'Red Hat Display', sans-serif;
+}
+
+.order-summary h1,
+.price-text h3 {
+    color: hsl(var(--dark-blue));
+}
+
+.change-link a {
+    color: hsl(var(--bright-blue));
+}
+
+.change-link a:hover {
+    color:hsl(var(--bright-blue), 0.7);
+}
+
+.order-summary p,
+.price-text p {
+    --regular: 500;
+    font-weight: var(--regular);
+}
+
+.price-text h3, .change-link a,
+.yesno a {
+    --bold: 700;
+    font-weight: var(--bold);
+}
+
+.order-summary h1 {
+    --blacked: 900;
+    font-weight: var(--blacked);
+}
+
+.order-summary-wrapper {
+    background: #fff;
+    display: flex;
+    flex-flow: column;
+    align-items: center;
+    width: 35%;
+    min-width: 20rem;
+    max-width: 31.25rem;
+    margin: 2rem auto;
+    border-radius: 20px;
+    box-shadow: 0 5px 60px 5px hsl(var(--dark-blue), 0.2);
+}
+
+.hero__img {
+    width: 100%;
+    border-top-left-radius: inherit;
+    border-top-right-radius: inherit;
+}
+
+.order-summary {
+    display: flex;
+    flex-flow: column;
+    margin-top: 2em;
+    text-align: center;
+    white-space: nowrap;
+}
+
+.order-summary p {
+    margin-top: 1em;
+    line-height: 1.5em;
+}
+
+.price {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 80%;
+    background: hsl(var(--very-pale-blue));
+    border-radius: 10px;
+    margin-top: 1em;
+    padding: 1.2em;
+}
+
+.price-annual {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    white-space: nowrap;
+}
+
+.price-text {
+    margin-left: 1em;
+}
+
+.yesno {
+    width: 80%;
+    margin-top: 1em;
+    padding: 1em;
+    text-align: center;    
+    border-radius: 10px;
+    transition: 300ms;
+    cursor: pointer;
+}
+
+.yesno a {
+    text-decoration: none;
+    color: #fff;
+}
+
+.yesno--blue {
+    background: hsl(var(--bright-blue));
+}
+
+.yesno--blank {
+    margin-bottom: 2.5em;
+}
+
+.yesno--blank a {
+    color: hsl(var(--desaturated-blue));
+}
+
+.yesno:hover {
+    transform: scale(1.1);
+}
+
+@media (min-width: 320px) and (max-width: 1024px) {
+    body {
+        background: hsl(var(--pale-blue)) url(./img/pattern-background-mobile.svg) top/100% 50% no-repeat;
+        font-size: 0.8rem;
+    }
+}
+
+    
