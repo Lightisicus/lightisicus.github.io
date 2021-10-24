@@ -1,0 +1,142 @@
+:root {
+--very-dark-blue: 233, 47%, 7%;
+--dark-desaturated-blue: 244, 38%, 16%;
+--soft-violet: 277, 64%, 61%;
+--white: 0, 0%, 100%;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background: hsl(var(--very-dark-blue));
+    color: hsl(var(--white));
+    font-family: 'Inter', sans-serif;
+}
+
+.insights h1 {
+    font-weight: 700;
+}
+
+.insights h1 span {
+    color: hsl(var(--soft-violet));
+}
+
+.insights p {
+    color: hsl(var(--white), .75);
+    font-family: 'Lexend Deca', sans-serif;
+    font-size: 0.9375rem;
+    margin-top: 1.5em;
+    line-height: 1.7;
+}
+
+.stats {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 4em;
+    list-style-type: none;
+}
+
+.stats span {
+    color: hsl(var(--white), .6);
+    text-transform: uppercase;
+    font-size: 0.75rem;
+}
+
+.container {
+    display: flex;
+    max-width: 70%;
+    margin: 5em auto;
+    background: hsl(var(--dark-desaturated-blue));
+}
+
+.text-container {
+    width: 50%;
+    padding: 3em 5em;
+}
+
+.image {
+    width: 50%;
+    height: inherit;
+    background: url(./images/image-header-desktop.jpg) top/cover no-repeat;
+}
+
+.purple-overlay {
+    height: 100%;
+    background: hsl(var(--soft-violet), .6);
+}
+
+.attribution { 
+    font-size: 11px; 
+    text-align: center; 
+}
+
+.attribution a { 
+    color: hsl(228, 45%, 44%); 
+}
+
+.attribution a:hover,
+.attribution a:focus { 
+    color: hsl(228, 45%, 60%); 
+    outline: none;
+}
+
+/* Media Queries */
+
+@media (max-width: 1100px) {  /* Laptop */
+    .container {
+        width: 90%;
+    }
+
+    .text-container {
+        padding: 4em 2em;
+    }
+}
+
+@media (max-width: 768px) {  /* Tablet */
+    .container {
+        flex-direction: column-reverse;
+        align-items: center;
+        text-align: center;
+    }
+
+    .text-container {
+        padding: 4em;
+        width: 90%;
+    }
+
+    .stats {
+        margin: 4em auto 0 auto;
+    }
+
+    .image {
+        width: 100%;
+        height: 350px;
+    }
+}
+
+@media (max-width: 568px) {  /* Phone */
+    .text-container {
+        padding: 2em 1em;
+    }
+
+    .stats {
+        display: flex;
+        flex-direction: column;
+        margin-top: 2em;
+    }
+
+    .stats li:nth-child(2),
+    .stats li:nth-child(3) {
+        margin-top: 1.5em;
+    }
+
+    .image {
+        height: 270px;
+    }
+}
+
