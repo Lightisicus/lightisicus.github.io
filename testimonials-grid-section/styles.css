@@ -1,0 +1,290 @@
+:root {
+--moderate-violet: 263, 55%, 52%;
+--moderate-violet-light: 263, 55%, 75%;
+--very-dark-grayish-blue: 217, 19%, 35%;
+--very-dark-blackish-blue: 219, 29%, 14%;
+--white: 0, 0%, 100%;
+--light-gray: 0, 0%, 81%;
+--light-grayish-blue: 210, 46%, 95%;
+
+--ff-barlow: 'Barlow Semi Condensed', sans-serif;
+--fw-600: 600;
+
+--n0columns: 4;
+--track-size: 1fr;
+
+--profile-pic-width: 2.5rem;
+
+--quote-svg-position: 80%;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background: hsl(var(--light-grayish-blue));
+    font-family: var(--ff-barlow);
+}
+
+.daniel--violet {
+    background: hsl(var(--moderate-violet)) url(./images/bg-pattern-quotation.svg) var(--quote-svg-position) top/120px no-repeat;
+}
+
+.jonathan--grayblue {
+    background: hsl(var(--very-dark-grayish-blue));
+}
+
+.jeanette--white, .kira--white {
+    background: hsl(var(--white));
+}
+
+.patrick--blackblue {
+    background: hsl(var(--very-dark-blackish-blue));
+}
+
+.name, .review {
+    font-weight: var(--fw-600);
+    color: hsl(var(--white));
+}
+
+.verified, .details {
+    font-size: 0.8125rem;
+}
+
+main {
+    display: grid;
+    grid-template-columns: repeat(var(--n0columns), var(--track-size));
+    grid-template-areas:
+    "daniel daniel jonathan kira"
+    "jeanette patrick patrick kira";
+    gap: 2em;
+    width: 80%;
+    margin: 5em auto;
+}
+
+article {
+    display: grid;
+    grid-template-columns: 3.4375rem 1fr;
+    grid-template-rows: repeat(2, calc(var(--profile-pic-width) / 2)) min-content;
+    grid-template-areas:
+    "image name"
+    "image verified"
+    "review review"
+    "details details";
+    border-radius: 0.625rem;
+    padding: 2em;
+}
+
+h1 {
+    font-size: 1.3rem;
+}
+
+.profile {
+    border-radius: 50%;
+    width: var(--profile-pic-width);
+    border: 2px solid var(--border-color, hsl(var(--white)));
+}
+
+.profile--light-violet {
+    --border-color: hsl(var(--moderate-violet-light));
+}
+
+.profile--violet {
+    --border-color: hsl(var(--moderate-violet));
+}
+
+.daniel {
+    grid-area: daniel;
+}
+
+.jonathan {
+    grid-area: jonathan;
+}
+
+.jeanette {
+    grid-area: jeanette;
+}
+
+.patrick {
+    grid-area: patrick;
+}
+
+.kira {
+    grid-area: kira;
+}
+
+.jeanette .name, .kira .name,
+.jeanette .review, .kira .review {
+    color: hsl(var(--very-dark-blackish-blue));
+}
+
+.jeanette .verified, .kira .verified,
+.jeanette .details, .kira .details {
+    color: hsl(var(--very-dark-grayish-blue));
+}
+
+.name {
+    grid-area: name;
+    align-self: end;
+}
+
+.verified {
+    grid-area: verified;
+    color: hsl(var(--white), 0.5);
+}
+
+.review {
+    grid-area: review;
+    margin-top: 1rem;
+}
+
+.details {
+    grid-area: details;
+    line-height: 1.5em;
+    margin-top: 1rem;
+    color: hsl(var(--white), 0.7);
+}
+
+.name, .verified {
+    white-space: nowrap;
+}
+
+.attribution { 
+    font-size: 11px; 
+    text-align: center; 
+}
+
+.attribution a { 
+    color: hsl(228, 45%, 44%); 
+}
+
+.attribution a:hover,
+.attribution a:focus { 
+    color: hsl(228, 45%, 60%);
+    outline: none; 
+}
+
+/* Media Queries */
+
+@media (max-width: 1260px) { /* Laptops & Smaller Desktops */
+    main {
+        width: 90%;
+    }
+
+    article {
+        padding: 1.5em;
+    }
+}
+
+@media (max-width: 950px) { /* Phones and Larger Tablets */
+    :root {
+        --n0columns: 2;
+        --quote-svg-position: 90%;
+    }
+
+    main {
+        grid-template-areas:
+        "daniel daniel"
+        "jonathan jonathan"
+        "jeanette jeanette"
+        "patrick patrick"
+        "kira kira";
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
