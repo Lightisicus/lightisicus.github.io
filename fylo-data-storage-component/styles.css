@@ -1,0 +1,297 @@
+:root {
+--pale-blue: hsl(243, 100%, 93%);
+--grayish-blue: hsl(229, 7%, 55%);
+--dark-blue: hsl(228, 56%, 26%);
+--very-dark-blue: hsl(229, 57%, 11%);
+
+--ff-raleway: 'Raleway', sans-serif;
+--fw-700: 700;
+--fs-normal: 14px;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: var(--ff-raleway);
+    background: var(--very-dark-blue) url(./images/bg-desktop.png) 0 450px/100vw 55vh no-repeat;
+    color: var(--pale-blue);
+    font-size: var(--fs-normal);
+}
+
+main {  /* The main grid houses the fylo and data boxes */
+    display: grid;
+    grid-template-columns: 35% 1fr;
+    gap: 1.5em;
+    width: 65vw;
+    min-width: 940px;
+    margin: 25em auto;
+}
+
+.fylo, .data {  /* Visual styles for the fylo and data boxes */
+    background: var(--dark-blue);
+    border-radius: 10px;
+    padding: 2.7em;
+}
+
+/* ===========Styling the fylo box=========== */
+
+.fylo {
+    border-top-right-radius: 80px;
+}
+
+.icons {
+    display: flex;
+    justify-content: space-between;
+    width: 150px;
+    margin-top: 2.7em;
+    list-style-type: none;
+}
+
+.icons li {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex: 0 40px;
+    padding: 0.5em;
+    background: var(--very-dark-blue);
+    border-radius: 8px;
+}
+
+/* ===========Styling the data box=========== */
+
+.data {
+    display: flex;
+    align-items: center;
+    height: 80%;
+    align-self: end;
+    position: relative;
+}
+
+.data-inner {
+    display: flex;
+    flex-direction: column;
+    flex: 0 100%;
+}
+
+.data-numbers {
+    display: flex;
+    justify-content: space-between;
+}
+
+.data__storage {
+    margin-bottom: 0.5em;
+}
+
+/* -----Storage meter subsection----- */
+
+.storage {
+    --gradient: linear-gradient(to right, hsl(6, 100%, 80%),hsl(335, 100%, 65%));
+    display: flex;
+    align-items: center;
+    width: 100%;
+    height: 20px;
+    margin: 0.6em 0 0.6em 0;
+    padding: 0.7em 0.25em;
+    border-radius: 100vh;
+    background: var(--very-dark-blue);
+}
+
+.meter {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    flex: 0 75%;
+    padding-right: 0.15em;
+    height: 14px;
+    background: var(--gradient);
+    border-radius: inherit;
+}
+
+.meter__circle {
+    width: 11px;
+    height: 11px;
+    border-radius: 50%;
+    background: white;
+}
+
+/* -----Chat bubble subsection----- */
+
+.available {
+    display: flex;
+    align-items: center;
+    position: absolute;
+    padding: 1em 2em;
+    top: -55px;
+    right: 40px;
+    background: white;
+    color: var(--grayish-blue);
+    border-radius: inherit;
+    z-index: 1;
+}
+
+.available::after {
+    content:'';
+    width: 20%;
+    height: 100%;
+    position: absolute;
+    background: inherit;
+    top: 30%;
+    right: 0;
+    clip-path: polygon(0 0, 100% 0, 100% 100%, 0 50%);
+    z-index: -1;
+}
+
+.available__amount {
+    color: var(--very-dark-blue);
+    font-size: 3rem;
+    margin-right: 0.25em;
+}
+
+.available p {
+    letter-spacing: 2px;
+    white-space: nowrap;
+}
+
+.data-numbers p, .data__used,
+.available {
+    font-weight: var(--fw-700);
+}
+
+/* ===========Styling the attribution=========== */
+
+.attribution { 
+    font-size: 11px; text-align: center; 
+}
+
+.attribution a { 
+    color: hsl(228, 45%, 44%); 
+}
+
+.attribution a:hover,
+.attribution a:focus { 
+    color: hsl(228, 45%, 60%);
+    outline: none; 
+}
+
+/* ===========Media Queries=========== */
+
+@media (max-width: 992px) {  /* Laptop */
+    main {
+        width: 90vw;
+        min-width: 750px;
+    }
+}
+
+@media (max-width: 768px) {  /* Tablet */
+    body {
+        background: url(./images/bg-mobile.png) top/100vw 100vh no-repeat;
+    }
+    
+    main {
+        grid-template-columns: 90vw;
+        width: 90vw;
+        min-width: initial;
+        margin-top: 5em;
+    }
+
+    .data {
+        align-self: start;
+    }
+
+    .storage {
+        max-width: 500px;
+    }
+
+    .data__storage {
+        margin-top: 2em;
+    }
+
+    .data-numbers {
+        max-width: 500px;
+        margin-bottom: 2em;
+    }
+
+    .available {
+        transform: scale(0.8);
+        right: 18%;
+        top: 75%;
+    }
+
+    .available::after {
+        display: none;
+    }
+}
+
+@media (max-width: 520px) {  /* Phones */
+    main {
+        min-width: 320px;
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
