@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
+
+  <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
+  
+  <title>Frontend Mentor | Chat App Illustration</title>
+  <style>
+    @import url(https://fonts.googleapis.com/css2?family=Rubik:wght@400;500;700&display=swap);
+  </style>
+  <link rel="stylesheet" href="./styles.css">
+</head>
+<body>
+  <div class="bg bg--gradient"></div>
+  <div class="bg bg--solid"></div>
+  <main>
+    <div class="app">
+      <div class="profile-pic">
+        <img src="./images/avatar.jpg" alt="" aria-hidden="true" class="profile-pic__image">
+        <div class="name-info">
+          <h2 class="name-info__heading">Samuel Green</h2>
+          <p class="name-info__availability">Available to Walk</p>
+        </div>
+      </div>
+      <article class="chat">  
+        <p class="chat__msg chat__msg--purple">That sounds great. I’d be happy with that.</p>
+        <p class="chat__msg chat__msg--purple">Could you send over some pictures of your dog, please?</p>
+        <figure class="chat-img">
+          <img src="./images/dog-image-1.jpg" alt="" class="chat-img__dog">
+          <img src="./images/dog-image-2.jpg" alt="" class="chat-img__dog">
+          <img src="./images/dog-image-3.jpg" alt="" class="chat-img__dog">
+        </figure>
+        <p class="chat__msg chat__msg--drkpurp">Here are a few pictures. She’s a happy girl!</p>
+        <p class="chat__msg chat__msg--drkpurp">Can you make it?</p>
+        <p class="chat__msg chat__msg--purple">She looks so happy! The time we discussed works. How long shall I take her out for?</p>
+        <form action="#" class="walk-time">
+          <div class="radio">
+            <input type="radio" name="walk-time" id="thirty" value="30m">
+            <label for="thirty">30 minute walk</label>
+          </div>
+          <p>$29</p>
+        </form>
+        <form action="#" class="walk-time">
+          <div class="radio">
+            <input type="radio" name="walk-time" id="hour" value="1h">
+            <label for="hour">1 hour walk</label>
+          </div>
+          <p>$49</p>
+        </form>
+        <form action="#" class="typemsg">
+          <input type="text" name="message" id="" placeholder="Type a message…">
+          <button class="typemsg__submit" type="submit">
+            <p class="typemsg__chevron">&#8250</p>
+          </button>
+        </form>
+      </article>
+    </div>
+    <section class="booking">
+      <h1 class="booking__heading">Simple booking</h1>
+      <p class="booking__paragraph">Stay in touch with our dog walkers through the chat interface. This makes it easy to 
+      discuss arrangements and make bookings. Once the walk has been completed you can rate 
+      your walker and book again all through the chat.</p>
+    </section>
+  </main>
+  <footer class="attribution">
+    Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
+    Coded by Lightisicus.
+  </footer>
+</body>
+</html>
