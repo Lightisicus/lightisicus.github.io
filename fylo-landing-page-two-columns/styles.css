@@ -366,8 +366,7 @@ section {
     margin-top: calc(var(--vertical-margin) * 3);
     background: white;
     border-radius: 6px;
-    padding: 2em;
-    padding-right: 4em;
+    padding: 4em 4em 2em 2em;
     box-shadow: 0 0 20px 5px hsl(var(--light-gray) / 0.5);
     font-size: 0.8rem;
 }
