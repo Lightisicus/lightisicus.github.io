@@ -1,0 +1,294 @@
+@import url(https://fonts.googleapis.com/css2?family=Spartan:wght@400;500;700&display=swap);
+
+/*
+Table of Contents
+
+:root variables
+General Styles
+
+Header Styles
+    Headline
+    Ratings
+Main Styles
+
+Media Queries
+*/
+
+/* =========== :root variables =========== */
+
+:root {
+/* Primary Colors */
+--very-dark-magenta: hsl(300, 43%, 22%);
+--soft-pink: hsl(333, 80%, 67%);
+
+/* Neutral Colors */
+--dark-grayish-magenta: hsl(303, 10%, 53%);
+--light-grayish-magenta: hsl(300, 24%, 96%);
+--white: hsl(0, 0%, 100%);
+
+/* Typography */
+--ff-main: 'Spartan', sans-serif;
+--fw-sm: 400;
+--fw-md: 500;
+--fw-lg: 700;
+--h1: 3.5rem;
+--h2: 1rem;
+--line-height-main: 1.5em;
+
+/* Box Model */
+--vertical-margin: 2rem;
+
+/* Sizing */
+--avatar: 2.2rem;
+--ratings: 4.7rem;
+--section-max: 90rem;
+
+/* Grid */
+--n0col: 2;
+--gutters: 1.5rem;
+
+/* Miscellaneous */
+--radius: 10px;
+}
+
+/* =========== General Styles =========== */
+
+html {
+    font-size: 15px;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: var(--ff-main);
+    padding: 8vw;
+}
+
+h1 {
+    font-size: var(--h1);
+    color: var(--very-dark-magenta);
+    line-height: 1em;
+}
+
+h2 {
+    font-size: var(--h2);
+}
+
+p {
+    color: var(--dark-grayish-magenta);
+    line-height: var(--line-height-main);
+}
+
+/* =========== Header Styles =========== */
+
+.top {
+    --headline-max: 30rem;
+    display: grid;
+    grid-template-columns: repeat(var(--n0col), 1fr);
+    grid-template-rows: repeat(3, var(--ratings));
+    grid-template-areas: 
+    "heading reviews"
+    "heading guru"
+    "paragraph besttech";
+    gap: calc(var(--gutters) / 1.5);
+    max-width: var(--section-max);
+    margin: 0 auto;
+}
+
+/* ----- Headline ----- */
+
+.top__heading {
+    grid-area: heading;
+    max-width: var(--headline-max);
+}
+
+.top__paragraph {
+    grid-area: paragraph;
+    max-width: var(--headline-max);
+}
+
+/* ----- Ratings ----- */
+
+.rating {
+    display: flex;
+    align-items: center;
+    width: 85%;
+    height: var(--ratings);
+    background: var(--light-grayish-magenta);
+    padding: 2em;
+    color: var(--very-dark-magenta);
+    border-radius: var(--radius);
+    white-space: nowrap;
+}
+
+.rating:first-of-type {
+    grid-area: reviews;
+}
+
+.rating:nth-of-type(2) {
+    grid-area: guru;
+    justify-self: center;
+}
+
+.rating:last-of-type {
+    grid-area: besttech;
+    justify-self: end;
+}
+
+.rating__heading {
+    margin-left: 3rem;
+    color: var(--very-dark-magenta);
+    font-weight: var(--fw-lg);
+}
+
+/* =========== Main Styles =========== */
+
+main {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: calc(var(--gutters) * 1.5);
+    max-width: var(--section-max);
+    min-height: 19rem;
+    margin: calc(var(--vertical-margin) * 2.5) auto;
+}
+
+.review {
+    display: grid;
+    grid-template-columns: var(--avatar) 1fr;
+    grid-template-areas: 
+    "avatar meta"
+    "paragraph paragraph";
+    align-items: center;
+    height: 90%;
+    background: var(--very-dark-magenta);
+    border-radius: var(--radius);
+    padding: 3em 2em;
+}
+
+.review:nth-of-type(2) {
+    align-self: center;
+}
+
+.review:last-of-type {
+    align-self: end;
+}
+
+.review img {
+    width: var(--avatar);
+    border-radius: 50%;
+}
+
+.meta {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 95%;
+    margin-left: 1.5em;
+}
+
+.meta__name {
+    color: var(--white);
+    font-weight: var(--fw-lg);
+}
+
+.meta__verified {
+    color: var(--soft-pink);
+}
+
+.review__comment {
+    grid-area: paragraph;
+    color: var(--white);
+    margin-top: var(--vertical-margin);
+}
+
+/* =========== Media Queries =========== */
+
+@media (min-width: 1600px) {  /* To control excess white space on larger viewports */
+    body {
+        padding: 9rem;
+    }
+}
+
+@media (max-width: 1200px) {  /* Laptop Breakpoint */
+    .top {
+        grid-template-columns: 1fr;
+        grid-template-areas: 
+        "heading"
+        "heading"
+        "paragraph"
+        "reviews"
+        "guru"
+        "besttech";
+        text-align: center;
+    }
+
+    .top__heading {
+        justify-self: center;
+    }
+
+    .top__paragraph {
+        justify-self: center;
+    }
+
+    .rating:first-of-type {
+        margin-top: var(--vertical-margin);
+    }
+}
+
+@media (max-width: 900px) {  /* Tablet Breakpoint */
+    body {
+        padding-top: 6.5rem;
+    }
+
+    .top__paragraph {
+        margin-top: calc(var(--vertical-margin) / 2);
+    }
+    
+    .rating {
+        flex-direction: column;
+        justify-content: center;
+        justify-self: center;
+        padding: 3em 2em;
+    }
+
+    .rating:last-of-type {
+        justify-self: center;
+    }
+
+    .rating__heading {
+        margin-left: 0;
+    }
+
+    main {
+        grid-template-columns: 1fr;
+        gap: calc(var(--gutters) / 1.5);
+        margin-top: calc(var(--vertical-margin) * 2);
+    }
+
+    .review {
+        height: auto;
+    }
+}
+
+@media (max-width: 500px) {  /* Phone Breakpoint */
+    :root {
+        --h1: 2.5rem;
+    }
+
+    .top__heading {
+        width: 100%;
+        min-width: 20rem;
+    }
+
+    .top__paragraph {
+        margin-top: calc(var(--vertical-margin) * -1);
+    }
+
+    .rating {
+        width: 100%;
+    }
+}
