@@ -1,0 +1,192 @@
+@import url(https://fonts.googleapis.com/css2?family=Karla:wght@400;700&display=swap);
+
+:root {
+/* Primary Colors */
+--cyan: hsl(179, 62%, 43%);
+--bright-yellow: hsl(71, 73%, 54%);
+
+/* Neutral Colors */
+--light-gray: hsl(204, 43%, 93%);
+--grayish-blue: hsl(218, 22%, 67%);
+
+/* Typography */
+--ff-body: 'Karla', sans-serif;
+--fw-sm: 400;
+--fw-lg: 700;
+--h1: 1.5rem;
+--h2: 1.2rem;
+--line-height-body: 1.5;
+
+/* White Space */
+--component-padding: 4em;
+--vertical-margin: 1rem;
+}
+
+/* Utilities */
+
+.white-text {
+    color: white;
+}
+
+.br-yellow-text {
+    color: var(--bright-yellow);
+}
+
+.cyan-text {
+    color: var(--cyan);
+}
+
+.light-gray-text {
+    color: var(--light-gray);
+}
+
+.grayish-blue-text {
+    color: var(--grayish-blue);
+}
+
+/* Code */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background: var(--light-gray);
+    font-family: var(--ff-body);
+}
+
+h1 {
+    font-size: var(--h1);
+}
+
+h2 {
+    font-size: var(--h2);
+}
+
+p {
+    line-height: var(--line-height-body);
+}
+
+ul {
+    list-style-type: none;
+}
+
+main {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-areas: 
+    "join join"
+    "monthly why-us";
+    width: 80%;
+    max-width: 40rem;
+}
+
+main > section {
+    padding: 2em var(--component-padding) 2em 2em;
+}
+
+.join {
+    grid-area: join;
+    background: white;
+}
+
+.join__sub-heading {
+    margin-top: calc(var(--vertical-margin) * 1.5);
+}
+
+.join__body {
+    margin-top: calc(var(--vertical-margin) / 1.5);
+}
+
+.monthly {
+    --cyan: 179 62% var(--cyan-l, 43%);
+    --cyan-l: 40%;
+    grid-area: monthly;
+    background: hsl(var(--cyan));
+    padding: calc(var(--component-padding) / 2);
+}
+
+.monthly-cost {
+    display: flex;
+    align-items: center;
+    margin-top: calc(var(--vertical-margin) / 2);
+}
+
+.monthly-cost__amount {
+    font-size: 2rem;
+    font-weight: var(--fw-lg);
+}
+
+.monthly-cost__cycle {
+    font-size: initial;
+    margin-left: 1rem;
+}
+
+.monthly__access {
+    white-space: nowrap;
+}
+
+.monthly__sign-up {
+    width: 100%;
+    max-width: 16rem;
+    background: var(--bright-yellow);
+    border: none;
+    border-radius: 5px;
+    padding: calc(var(--component-padding) / 4) 0;
+    margin-top: calc(var(--vertical-margin) * 1.5);
+    font-size: initial;
+    font-weight: var(--fw-lg);
+}
+
+.why-us {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    grid-area: why-us;
+    background: var(--cyan);
+}
+
+@media (max-width: 768px) {
+    main {
+        grid-template-columns: 1fr;
+        grid-template-areas: 
+        "join"
+        "monthly"
+        "why-us";
+        text-align: center;
+    }
+
+    main > section {
+        padding: calc(var(--component-padding) / 2);
+    }
+
+    .monthly-cost {
+        width: max-content;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    .why-us-list {
+        margin-top: var(--vertical-margin);
+    }
+}
+
+@media (max-width: 480px) {
+    main {
+        text-align: left;
+    }
+
+    .monthly-cost {
+        width: 100%;
+    }
+
+    .monthly__sign-up {
+        max-width: initial;
+    }
+}
