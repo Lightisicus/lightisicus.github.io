@@ -1,0 +1,228 @@
+@import url(https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600&family=Poppins&display=swap);
+
+:root {
+/* Colors */ 
+--violet: hsl(257, 40%, 49%);
+--soft-magenta: hsl(300, 69%, 71%);
+--white: hsl(0, 0%, 100%);
+
+/* Typography */
+--ff-body: 'Open Sans', sans-serif;
+--ff-head: 'Poppins', sans-serif;
+--fw-1: 400;
+--fw-2: 600;
+--lh-body: 1.7;
+--h1-size: 2.4rem;
+
+/* White Space */
+--vertical-margin: 1rem;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    padding: 5rem 0;
+    font-family: var(--ff-body);
+    color: var(--white);
+    background: var(--violet) url(./images/bg-desktop.svg);
+}
+
+h1 {
+    font-family: var(--ff-head);
+    font-weight: var(--fw-2);
+    font-size: var(--h1-size);
+}
+
+ul {
+    list-style-type: none;
+}
+
+img {
+    display: block;
+    max-width: 100%;
+}
+
+button {
+    font-family: var(--ff-head);
+    font-size: 1rem;
+    cursor: pointer;
+}
+
+main {
+    display: grid;
+    grid-template-columns: 62% 1fr;
+    grid-template-rows: 4rem auto 4rem;
+    grid-template-areas:
+    "logo ."
+    "mockups body"
+    ". social-media";
+    width: 90%;
+    max-width: 80rem;
+    margin: 0 auto;
+}
+
+.logo {
+    grid-area: logo;
+}
+
+.mockups {
+    width: clamp(20rem, 50vw, 45rem);
+    margin-top: 5rem;
+    grid-area: mockups;
+}
+
+.community {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    justify-self: end;
+    grid-area: body;
+}
+
+.community__body {
+    margin-top: var(--vertical-margin);
+    line-height: var(--lh-body);
+}
+
+.community__register {
+    width: 12rem;
+    margin-top: calc(var(--vertical-margin) * 1.5);
+    background: var(--white);
+    border: none;
+    border-radius: 100vh;
+    padding: 0.8em 3.5em;
+    color: var(--violet);
+    box-shadow: 0 0 1em 0.2em hsl(0 0% 0% / 0.4);
+    position: relative;
+    z-index: 1;
+    overflow: hidden;
+    transition: color 500ms ease-out;
+}
+
+.community__register::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: var(--soft-magenta);
+    transform: translateX(-100%);
+    transition: all 500ms ease-out;
+    visibility: hidden;
+    z-index: -1;
+}
+
+.community__register:hover {
+    color: var(--white);
+}
+
+.community__register:hover::before {
+    transform: translateX(0);
+    visibility: visible;
+}
+
+.social-media {
+    display: flex;
+    align-items: center;
+    justify-self: end;
+    grid-area: social-media;
+}
+
+.social-media a {
+    display: inline-block;
+}
+
+.social-media li :first-child {
+    margin-right: 1em;
+}
+
+.svg-inline--fa {
+    width: 1.2rem;
+    aspect-ratio: 1;
+    outline: 1px solid var(--white);
+    outline-offset: 0.5em;
+    border-radius: 50%;
+    transform-origin: left;
+    transition: transform 300ms ease-in-out;
+}
+
+.svg-inline--fa path {
+    fill: var(--white);
+}
+
+.social-media li:hover .svg-inline--fa {
+    transform: scale(1.2);
+}
+
+@media (max-width: 900px) {
+    body {
+        padding: 2.5rem 0;
+    }
+    
+    button {
+        font-size: 0.9rem;
+    }
+    
+    main {
+        grid-template-columns: 1fr;
+        grid-template-rows: auto;
+        grid-template-areas: 
+        "logo"
+        "mockups"
+        "body"
+        "social-media";
+        text-align: center;
+    }
+
+    .logo {
+        width: 12.5rem;
+    }
+
+    .mockups {
+        width: 100vw;
+        justify-self: center;
+    }
+
+    .community {
+        align-items: center;
+    }
+
+    .community__heading {
+        margin-top: calc(var(--vertical-margin) * 3.5);
+    }
+
+    .community__body {
+        max-width: 45rem;
+    }
+
+    .community__register {
+        width: 15rem;
+    }
+
+    .social-media {
+        width: 7.5rem;
+        justify-content: space-between;
+        justify-self: center;
+        margin-top: calc(var(--vertical-margin) * 5);
+    }
+
+    .social-media li :first-child {
+        margin-right: 0;
+    }
+}
+
+@media (max-width: 550px) {
+    :root {
+        --h1-size: 1.7rem;
+    }
+
+    body {
+        background: var(--violet) url(./images/bg-mobile.svg) no-repeat;
+    }
+
+    .logo {
+        width: 10rem;
+    }
+}

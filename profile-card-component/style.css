@@ -1,0 +1,120 @@
+@import url(https://fonts.googleapis.com/css2?family=Kumbh+Sans:wght@400;700&display=swap);
+
+:root {
+/* Primary Colors */
+--dark-cyan: hsl(185, 75%, 39%);
+--very-dark-desaturated-blue: hsl(229, 23%, 23%);
+--dark-grayish-blue: hsl(227, 10%, 46%);
+
+/* Neutral Colors */
+--dark-gray: 0 0% 59%;
+
+/* Typography */
+--ff-body: 'Kumbh Sans', sans-serif;
+--fw-sm: 400;
+--fw-lg: 700;
+--fs-meta: 1.125rem;
+--fs-stats: 0.7rem;
+
+/* White Space */
+--vertical-margin: 1rem;
+
+/* Miscellaneous */
+--card-radius: 10px;
+}
+
+/* Utilities */
+
+.name-stats {
+    color: var(--very-dark-desaturated-blue);
+    font-weight: var(--fw-lg);
+    font-size: var(--fs-meta);
+}
+
+.dark-grayish-blue-text {
+    color: var(--dark-grayish-blue);
+}
+
+/* Code */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    font-family: var(--ff-body);
+    background: url(./images/bg-pattern-top.svg) no-repeat -60px -330px/contain, 
+    url(./images/bg-pattern-bottom.svg) 660px 460px/cover no-repeat;
+    background-color: var(--dark-cyan);
+}
+
+.stats-about {
+    font-size: var(--fs-stats);
+}
+
+main {
+    width: max-content;
+    background: white;
+    border-radius: var(--card-radius);
+}
+
+.card-bg {
+    position: relative;
+}
+
+.card-bg :first-child {
+   vertical-align: bottom;
+   border-top-left-radius: var(--card-radius);
+   border-top-right-radius: var(--card-radius);
+}
+
+.profile-picture {
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translate(-50%, 50%);
+    border-radius: 50%;
+    outline: 5px solid white;
+}
+
+.card-personal {
+    padding: 3em 3em 1.5em;
+}
+
+.name-age {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: calc(var(--vertical-margin) * 1.5);
+}
+
+.age {
+    margin-left: 0.5em;
+    font-size: var(--fs-meta);
+}
+
+.country {
+    display: flex;
+    justify-content: center;
+    margin-top: calc(var(--vertical-margin) / 2);
+}
+
+.card-metadata {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    text-align: center;
+    border-top: 1px solid hsl(var(--dark-gray) / 0.5);
+    padding: 1.5em 3em 1.5em;
+}
+
+.stats-about {
+    margin-top: calc(var(--vertical-margin) / 4);
+    letter-spacing: 0.15em;
+}
